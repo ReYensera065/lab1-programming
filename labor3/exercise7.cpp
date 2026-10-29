@@ -11,7 +11,7 @@ int main(){
     int nonrevers;
     std::cin >> nonrevers;
 
-    nonrevers = std::abs(nonrevers);
+    nonrevers = abs(nonrevers);
 
     int chengebl = nonrevers;
 
