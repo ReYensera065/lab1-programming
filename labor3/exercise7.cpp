@@ -62,15 +62,13 @@ int main(){
         }
     }else{
 
-    // если число чётное
+    // если число не чётное
         for (int i = 0;k/2>i;i++){
         second_part = second_part * 10 + chenge % 10;;
         chenge = chenge / 10;
 
     }
             first_part = nonrevers / pow(10,k/2+1);
-            std::cout<<first_part<<"\n";
-            std::cout<<second_part<<"\n";
 
             {
             if (first_part == second_part){
