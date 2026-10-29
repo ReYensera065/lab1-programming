@@ -3,15 +3,14 @@
 #include <windows.h>
 #include <cmath>
 
-
 int main(){
     SetConsoleCP(65001);
     SetConsoleOutputCP(65001);
     std::cout<< " Введите число: ";
-    int nonrevers;
+    double nonrevers;
     std::cin >> nonrevers;
 
-    nonrevers = abs(nonrevers);
+
 
     int chengebl = nonrevers;
 
@@ -31,9 +30,43 @@ int main(){
     int first_part = 0;
     int second_part = 0;
     int chenge = nonrevers;
+    // если число дробное
+
+
+    double intpart;
+    double fract = modf(nonrevers,&intpart);
+    int fract_chengebl = fract;
+    int k_f = 0;
+
+
+    while (fract_chengebl > 0){
+        fract_chengebl = fract_chengebl /10;
+        k_f += 1;
+    }
+
+    if ((ceil(nonrevers) != floor(nonrevers))&&(k == k_f )){
+
+
+         for (int i = 0;k_f>i;i++){
+            second_part = second_part * 10 + chenge % 10;;
+            chenge = chenge / 10;
+        }
+        if (int(nonrevers) == second_part){
+            std::cout<<"Число является палиндромом\n";
+            std::cin.get();
+            return 0;
+        } else {
+            std::cout<<"Число является не палиндромом\n";
+            std::cin.get();
+            return 0;
+        }
+
+    }
+
 
     // Если число меньше 10, то оно является палиндромом
     if ((nonrevers - 10 <0) && (nonrevers - 10 > -10)){
+        nonrevers = abs(nonrevers);
         std::cout<<"Число является палиндромом\n";
         std::cin.get();
         return 0;
