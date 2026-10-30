@@ -9,61 +9,33 @@ int main(){
     std::cout<< " Введите число: ";
     double nonrevers;
     std::cin >> nonrevers;
-
-
-
+    int first_part = 0;
+    int second_part = 0;
+    double  n = nonrevers;
+    int digits = 0;
+    if ((ceil(nonrevers) != floor(nonrevers))){
+        while (std::fabs(n - std::round(n)) > 1e-9 && digits < 10) {
+            n *= 10;
+            ++digits;
+            }
+        nonrevers = n;
+        std::cout<<nonrevers<<"\n";
+     }
+     std::cout<<nonrevers<<"\n";
     int chengebl = nonrevers;
-
+    int chenge = nonrevers;
     int k = 0;
     while (chengebl > 0){
         chengebl = chengebl /10;
         k += 1;
     }
-
     int k_status = 0;
     if (fmod(k,2) == 0){
         k_status = 1;
     } else {
         k_status = 0;
     }
-
-    int first_part = 0;
-    int second_part = 0;
-    int chenge = nonrevers;
-    // если число дробное
-
-
-    double intpart;
-    double fract = modf(nonrevers,&intpart);
-    int fract_chengebl = fract;
-    int k_f = 0;
-
-
-    while (fract_chengebl > 0){
-        fract_chengebl = fract_chengebl /10;
-        k_f += 1;
-    }
-
-    if ((ceil(nonrevers) != floor(nonrevers))&&(k == k_f )){
-
-
-         for (int i = 0;k_f>i;i++){
-            second_part = second_part * 10 + chenge % 10;;
-            chenge = chenge / 10;
-        }
-        if (int(nonrevers) == second_part){
-            std::cout<<"Число является палиндромом\n";
-            std::cin.get();
-            return 0;
-        } else {
-            std::cout<<"Число является не палиндромом\n";
-            std::cin.get();
-            return 0;
-        }
-
-    }
-
-
+    std::cout<<k<<"\n";
     // Если число меньше 10, то оно является палиндромом
     if ((nonrevers - 10 <0) && (nonrevers - 10 > -10)){
         nonrevers = abs(nonrevers);
@@ -71,17 +43,13 @@ int main(){
         std::cin.get();
         return 0;
     }
-
     if (k_status == 1){
     // Если число чётное
-
         for (int i = 0;k/2>i;i++){
         second_part = second_part * 10 + chenge % 10;;
         chenge = chenge / 10;
-
     }
         first_part = nonrevers /pow(10,k/2);
-
         {
             if (first_part == second_part){
                 std::cout<<"Число является палиндромом\n";
@@ -94,15 +62,12 @@ int main(){
             }
         }
     }else{
-
     // если число не чётное
         for (int i = 0;k/2>i;i++){
         second_part = second_part * 10 + chenge % 10;;
         chenge = chenge / 10;
-
     }
             first_part = nonrevers / pow(10,k/2+1);
-
             {
             if (first_part == second_part){
                 std::cout<<"Число является палиндромом\n";
@@ -115,7 +80,6 @@ int main(){
             }
         }
     }
-
     std::cin.get();
     return 0;
 }

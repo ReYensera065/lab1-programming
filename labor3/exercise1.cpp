@@ -18,12 +18,12 @@ int main() {
     std::cout << "Введите дробное число: ";
     std::cin >> decimal;
 
-    std::cin.ignore();
+    std::cin.ignore(); // очищает буфер ввода, чтобы избежать проблем с getline после ввода чисел
 
     std::cout << "Введите строку: ";
     std::getline(std::cin,text);
 
-    std::cout << "Значени: " << integer << ", тип: "<< typeid(integer).name()<<"\n";
+    std::cout << "Значени: " << integer << ", тип: "<< typeid(integer).name()<<"\n"; // typeid возвращает тип переменной, name() возвращает имя типа в виде строки
 
     std::cout << "Значени: " << decimal << ", тип: "<< typeid(decimal).name()<<"\n";
 

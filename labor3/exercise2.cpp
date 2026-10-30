@@ -24,5 +24,4 @@ int main(){
     std::cout<<"Степень:"<<std::pow(a,b)<<"\n"; // возведение в степень
     std::cin.get();
 return 0;
-
 }
